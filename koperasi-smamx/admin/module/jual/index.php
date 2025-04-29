@@ -1,4 +1,4 @@
- <!--sidebar end-->
+<!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -8,7 +8,7 @@
 	$id = $_SESSION['admin']['id_member'];
 	$hasil = $lihat -> member_edit($id);
 ?>
-	<h4>Keranjang Penjualan</h4>
+	<h4>Transaksi</h4>
 	<br>
 	<?php if(isset($_GET['success'])){?>
 	<div class="alert alert-success">
@@ -145,7 +145,16 @@
 											$row_stok = $config->prepare($sql_stok);
 											$row_stok->execute(array($total_stok, $idb));
 										}
-										echo '<script>alert("Belanjaan Berhasil Di Bayar !");</script>';
+
+										// Tambahkan kode untuk reset keranjang setelah pembayaran
+										$sql_delete = "DELETE FROM penjualan";
+										$row_delete = $config->prepare($sql_delete);
+										$row_delete->execute();
+										
+										echo '<script>
+											alert("Belanjaan Berhasil Di Bayar !");
+											window.location.href="index.php?page=jual";
+										</script>';
 									}else{
 										echo '<script>alert("Uang Kurang ! Rp.'.$hitung.'");</script>';
 									}
