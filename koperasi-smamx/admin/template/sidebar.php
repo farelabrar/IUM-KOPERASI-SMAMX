@@ -8,8 +8,8 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-cash-register"></i>
+        <div class="sidebar-brand-icon">
+            <img src="assets/img/logo.jpg" alt="Logo" style="width: 50px;">
         </div>
         <div class="sidebar-brand-text mx-3">POS Koperasi<sup></sup></div>
     </a>
@@ -65,7 +65,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="index.php?page=pengaturan">
             <i class="fas fa-fw fa-cogs"></i>
-            <span>Pengaturan Toko</span></a>
+            <span>Pengaturan </span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
