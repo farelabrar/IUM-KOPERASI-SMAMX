@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon">
             <img src="assets/img/logo.jpg" alt="Logo" style="width: 50px;">
         </div>
-        <div class="sidebar-brand-text mx-3">POS Koperasi<sup></sup></div>
+        <div class="sidebar-brand-text mx-3">Koperasi SMAMX<sup></sup></div>
     </a>
 
     <!-- Divider -->
