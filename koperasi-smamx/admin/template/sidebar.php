@@ -1,7 +1,7 @@
 <!--sidebar start-->
 <?php 
     $id = $_SESSION['admin']['id_member'];
-    $hasil_profil = $lihat -> member_edit($id);
+    $hasil_profil = $lihat->member_edit($id);
 ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon">
             <img src="assets/img/logo.jpg" alt="Logo" style="width: 50px;">
         </div>
-        <div class="sidebar-brand-text mx-3">Koperasi SMAMX<sup></sup></div>
+        <div class="sidebar-brand-text mx-3">Koperasi SMAMX</div>
     </a>
 
     <!-- Divider -->
@@ -21,56 +21,63 @@
     <li class="nav-item active">
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span>
+        </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+
     <!-- Heading -->
-    <!-- <div class="sidebar-heading">
-           Master
-       </div> -->
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
+    <div class="sidebar-heading">
+        Data Management
+    </div>
+
+    <!-- Nav Item - Data Master -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
             <i class="fas fa-fw fa-database"></i>
             <span>Data Master</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseMaster" class="collapse" aria-labelledby="headingMaster" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                <a class="collapse-item" href="index.php?page=barang">Barang</a>
-                <a class="collapse-item" href="index.php?page=kategori">Kategori</a>
-                <!-- <a class="collapse-item" href="index.php?page=user">User</a> -->
+                <h6 class="collapse-header">Master Components:</h6>
+                <a class="collapse-item" href="index.php?page=barang"><i class="fas fa-box"></i> Barang</a>
+                <a class="collapse-item" href="index.php?page=kategori"><i class="fas fa-tags"></i> Kategori</a>
             </div>
         </div>
     </li>
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true"
-            aria-controls="collapse3">
-            <i class="fas fa-fw fa-desktop"></i>
+
+    <!-- Nav Item - Transaksi -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTransaksi" aria-expanded="true" aria-controls="collapseTransaksi">
+            <i class="fas fa-fw fa-shopping-cart"></i>
             <span>Transaksi</span>
         </a>
-        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionSidebar">
+        <div id="collapseTransaksi" class="collapse" aria-labelledby="headingTransaksi" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                <a class="collapse-item" href="index.php?page=jual">Transaksi Jual</a>
-                <a class="collapse-item" href="index.php?page=laporan">Laporan Penjualan</a>
+                <h6 class="collapse-header">Transaksi Components:</h6>
+                <a class="collapse-item" href="index.php?page=jual"><i class="fas fa-cash-register"></i> Transaksi Jual</a>
+                <a class="collapse-item" href="index.php?page=laporan"><i class="fas fa-file-alt"></i> Laporan Penjualan</a>
             </div>
         </div>
     </li>
+
+    <!-- Divider -->
     <hr class="sidebar-divider">
-    <li class="nav-item active">
+
+    <!-- Nav Item - Pengaturan -->
+    <li class="nav-item">
         <a class="nav-link" href="index.php?page=pengaturan">
             <i class="fas fa-fw fa-cogs"></i>
-            <span>Pengaturan </span></a>
+            <span>Pengaturan</span>
+        </a>
     </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Sidebar Toggler (Sidebar) -->
+    <!-- Sidebar Toggler -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
