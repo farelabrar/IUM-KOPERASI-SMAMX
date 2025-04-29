@@ -1,4 +1,4 @@
-<!--sidebar end-->
+ <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -145,16 +145,7 @@
 											$row_stok = $config->prepare($sql_stok);
 											$row_stok->execute(array($total_stok, $idb));
 										}
-
-										// Tambahkan kode untuk reset keranjang setelah pembayaran
-										$sql_delete = "DELETE FROM penjualan";
-										$row_delete = $config->prepare($sql_delete);
-										$row_delete->execute();
-										
-										echo '<script>
-											alert("Belanjaan Berhasil Di Bayar !");
-											window.location.href="index.php?page=jual";
-										</script>';
+										echo '<script>alert("Belanjaan Berhasil Di Bayar !");</script>';
 									}else{
 										echo '<script>alert("Uang Kurang ! Rp.'.$hitung.'");</script>';
 									}
