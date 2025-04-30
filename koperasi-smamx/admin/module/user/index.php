@@ -9,10 +9,9 @@
     $hasil = $lihat -> member_edit($id);
 ?>
 <div class="container-fluid">
-    <div class="row mb-4">
-        <div class="col-lg-12">
-            <h4 class="font-weight-bold text-primary">Profil Pengguna</h4>
-            
+<div class="row mb-4">
+        <div class="col-md-12">
+        <h3 class="font-weight-bold text-dark">Profil Pengguna</h3>
         </div>
     </div>
 
