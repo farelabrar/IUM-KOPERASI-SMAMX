@@ -2,7 +2,11 @@
     $id = $_SESSION['admin']['id_member'];
     $hasil = $lihat -> member_edit($id);
 ?>
-<h4>Transaksi</h4>
+<div class="row mb-4">
+        <div class="col-md-12">
+             <h3 class="font-weight-bold text-dark">Transaksi</h3>
+        </div>
+    </div>
 <br>
 <?php if(isset($_GET['success'])){?>
 <div class="alert alert-success">
