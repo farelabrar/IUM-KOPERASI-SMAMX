@@ -41,7 +41,6 @@
         </a>
         <div id="collapseMaster" class="collapse" aria-labelledby="headingMaster" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Master Components:</h6>
                 <a class="collapse-item" href="index.php?page=barang"><i class="fas fa-box"></i> Barang</a>
                 <a class="collapse-item" href="index.php?page=kategori"><i class="fas fa-tags"></i> Kategori</a>
             </div>
@@ -56,7 +55,6 @@
         </a>
         <div id="collapseTransaksi" class="collapse" aria-labelledby="headingTransaksi" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Transaksi Components:</h6>
                 <a class="collapse-item" href="index.php?page=jual"><i class="fas fa-cash-register"></i> Transaksi Jual</a>
                 <a class="collapse-item" href="index.php?page=laporan"><i class="fas fa-file-alt"></i> Laporan Penjualan</a>
             </div>

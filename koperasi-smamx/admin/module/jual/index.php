@@ -1,10 +1,10 @@
- <!--sidebar end-->
+<!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-<?php 
+	  <?php 
 	$id = $_SESSION['admin']['id_member'];
 	$hasil = $lihat -> member_edit($id);
 ?>
@@ -163,21 +163,24 @@
 									<input type="hidden" name="periode[]" value="<?php echo date('m-Y');?>">
 								<?php $no++; }?>
 								<tr>
-									<td>Total Semua  </td>
-									<td><input type="text" class="form-control" name="total" value="<?php echo $total_bayar;?>"></td>
-								
-									<td>Bayar  </td>
-									<td><input type="text" class="form-control" name="bayar" value="<?php echo $bayar;?>"></td>
-									<td><button class="btn btn-success"><i class="fa fa-shopping-cart"></i> Bayar</button>
-									<?php  if(!empty($_GET['nota'] == 'yes')) {?>
-										<a class="btn btn-danger" href="fungsi/hapus/hapus.php?penjualan=jual">
-										<b>RESET</b></a></td><?php }?></td>
+									<td>Total Semua</td>
+									<td><input type="text" class="form-control" id="total" name="total" value="<?php echo $total_bayar; ?>" readonly></td>
+
+									<td>Bayar</td>
+									<td><input type="number" class="form-control" id="bayar" name="bayar" value="<?php echo $bayar; ?>"></td>
+
+									<td>Kembali</td>
+									<td><input type="text" class="form-control" id="kembali" name="kembali" value="<?php echo $hitung; ?>" readonly></td>
 								</tr>
+								<td><button class="btn btn-success"><i class="fa fa-shopping-cart"></i> Bayar</button>
+								<?php  if(!empty($_GET['nota'] == 'yes')) {?>
+									<a class="btn btn-danger" href="fungsi/hapus/hapus.php?penjualan=jual">
+									<b>RESET</b></a></td><?php }?></td>
 							</form>
 							<!-- aksi ke table nota -->
 							<tr>
-								<td>Kembali</td>
-								<td><input type="text" class="form-control" value="<?php echo $hitung;?>"></td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td>
 									<a href="print.php?nm_member=<?php echo $_SESSION['admin']['nm_member'];?>
@@ -217,5 +220,14 @@ $(document).ready(function(){
 		});
 	});
 });
-//To select country name
+
+// Auto-update "Kembali" when "Bayar" is changed
+document.getElementById('bayar').addEventListener('input', function () {
+	const total = parseFloat(document.getElementById('total').value) || 0;
+	const bayar = parseFloat(this.value) || 0;
+	const kembali = bayar - total;
+
+	// Update the "Kembali" field
+	document.getElementById('kembali').value = kembali >= 0 ? kembali.toFixed(2) : 0;
+});
 </script>

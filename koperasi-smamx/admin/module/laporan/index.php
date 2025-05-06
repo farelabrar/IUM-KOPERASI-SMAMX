@@ -60,7 +60,7 @@
                                 $now = date('Y');
                                 echo "<select name='thn' class='form-control' required>";
                                 echo '<option value="" selected disabled>Pilih Tahun</option>';
-                                for ($a=2017; $a<=$now; $a++) {
+                                for ($a=2022; $a<=$now; $a++) {
                                     echo "<option value='$a'>$a</option>";
                                 }
                                 echo "</select>";
