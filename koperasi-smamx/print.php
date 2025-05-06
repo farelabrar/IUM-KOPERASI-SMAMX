@@ -11,6 +11,12 @@
     $toko = $lihat->toko();
     $hsl = $lihat->penjualan();
 ?>
+<?php
+$total_bayar = 0;
+foreach ($hsl as $isi) {
+    $total_bayar += $isi['total'];
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -119,9 +125,7 @@
             </tr>
             <?php 
             $no=1; 
-            $total = 0;
             foreach($hsl as $isi){
-                $total += $isi['total'];
             ?>
             <tr>
                 <td class="column-code"><?php echo $no; ?></td>
@@ -136,7 +140,7 @@
             <table width="100%">
                 <tr class="total-section">
                     <td align="right">Total:</td>
-                    <td align="right" width="40%">Rp <?php echo number_format($hasil['bayar'], 0, ',', '.'); ?></td>
+                    <td align="right" width="40%">Rp <?php echo number_format($total_bayar, 0, ',', '.'); ?></td>
                 </tr>
                 <tr>
                     <td align="right">Bayar:</td>
@@ -150,7 +154,7 @@
         </div>
         
         <div class="receipt-footer">
-            <p>Terima Kasih Telah Berbelanja di Toko Kami!</p>
+            <p>Terima Kasih Telah Berbelanja di Koperasi SMAMX!</p>
             <p>Barang yang sudah dibeli tidak dapat dikembalikan</p>
         </div>
     </div>

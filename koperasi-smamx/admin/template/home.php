@@ -40,9 +40,8 @@
     $recent_transactions = $row_recent->fetchAll();
 
     // Menghitung pendapatan hari ini menggunakan format tanggal yang sesuai
-    $today = date('Y-m-d');
-    $today_format = date('d F Y'); // Format yang sesuai dengan fungsi hari_jual()
-    $param = "%{$today_format}%";
+    $today = date('j F Y'); 
+    $param = "%{$today}%"; 
     $sql_revenue = "SELECT SUM(total) as bayar FROM nota WHERE tanggal_input LIKE ?";
     $row_revenue = $config->prepare($sql_revenue);
     $row_revenue->execute([$param]);
