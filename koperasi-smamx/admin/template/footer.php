@@ -8,7 +8,7 @@
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <span>
-                    <?php echo date('Y');?> - Sistem Koperasi Sekolah Berbasis Web 
+                    <?php echo date('Y');?> - Koperasi SMAMX. All rights reserved.
                 </span>
             </div>
         </div>

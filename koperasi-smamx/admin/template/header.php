@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>POS Koperasi </title>
+    <title>Koperasi SMAMX</title>
 
     <!-- Custom fonts for this template-->
     <link href="sb-admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

@@ -1,264 +1,59 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Apr 28, 2025 at 02:00 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Database: `db_toko`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `barang`
---
-
-CREATE TABLE `barang` (
-  `id` int(11) NOT NULL,
-  `id_barang` varchar(255) NOT NULL,
-  `id_kategori` int(11) NOT NULL,
-  `nama_barang` text NOT NULL,
-  `merk` varchar(255) NOT NULL,
-  `harga_beli` varchar(255) NOT NULL,
-  `harga_jual` varchar(255) NOT NULL,
-  `satuan_barang` varchar(255) NOT NULL,
-  `stok` text NOT NULL,
-  `tgl_input` varchar(255) NOT NULL,
-  `tgl_update` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `barang`
---
-
+-- Dumping data for table db_toko.barang: ~2 rows (approximately)
 INSERT INTO `barang` (`id`, `id_barang`, `id_kategori`, `nama_barang`, `merk`, `harga_beli`, `harga_jual`, `satuan_barang`, `stok`, `tgl_input`, `tgl_update`) VALUES
-(5, 'BR001', 9, 'Pensil', 'Faber Castel', '4200', '5000', 'PCS', '48', '28 April 2025, 18:46', NULL);
+	(4, 'BR001', 8, 'Pensil', 'Faber Castel', '1500', '2500', 'PCS', '48', '9 May 2025, 22:55', NULL),
+	(5, 'BR002', 8, 'Pulpen', 'Joyko', '1750', '2500', 'PCS', '46', '9 May 2025, 22:58', NULL),
+	(7, 'BR003', 10, 'Golda', 'Golda', '3000', '3500', 'PCS', '1', '10 May 2025, 20:58', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `kategori`
---
-
-CREATE TABLE `kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL,
-  `tgl_input` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `kategori`
---
-
+-- Dumping data for table db_toko.kategori: ~4 rows (approximately)
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `tgl_input`) VALUES
-(8, 'Seragam', '28 April 2025, 16:38'),
-(9, 'ATK', '28 April 2025, 18:42'),
-(10, 'Makanan', '28 April 2025, 18:42'),
-(12, 'Minuman', '28 April 2025, 18:43'),
-(13, 'Snack', '28 April 2025, 18:43');
+	(8, 'ATK', '9 May 2025, 22:55'),
+	(9, 'Makanan', '9 May 2025, 22:55'),
+	(10, 'Minuman', '9 May 2025, 22:55'),
+	(11, 'Snack', '9 May 2025, 23:42');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `id_login` int(11) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `pass` char(32) NOT NULL,
-  `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `login`
---
-
+-- Dumping data for table db_toko.login: ~0 rows (approximately)
 INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
-(1, 'admin', '202cb962ac59075b964b07152d234b70', 1);
+	(1, 'admin', '202cb962ac59075b964b07152d234b70', 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `member`
---
-
-CREATE TABLE `member` (
-  `id_member` int(11) NOT NULL,
-  `nm_member` varchar(255) NOT NULL,
-  `alamat_member` text NOT NULL,
-  `telepon` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `gambar` text NOT NULL,
-  `NIK` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `member`
---
-
+-- Dumping data for table db_toko.member: ~0 rows (approximately)
 INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
-(1, 'Admin', 'Jl. Genteng Muhamadiyah No.45, Genteng, Kec. Genteng, Surabaya, Jawa Timur 60275', '(031) 5352707', 'Admin@gmail.com', '1745833480ui-sam.jpg', '1');
+	(1, 'Admin', 'Surabayaa', '081234567890', 'Admin@gmail.com', '1746804646ikon.jpg', '');
 
--- --------------------------------------------------------
+-- Dumping data for table db_toko.nota: ~4 rows (approximately)
+INSERT INTO `nota` (`id_nota`, `id_barang`, `id_member`, `jumlah`, `total`, `tanggal_input`, `periode`) VALUES
+	(38, 'BR001', 1, '1', '2500', '9 May 2025, 23:36', '05-2025'),
+	(39, 'BR002', 1, '3', '7500', '9 May 2025, 23:36', '05-2025'),
+	(40, 'BR003', 1, '3', '10500', '10 May 2025, 21:20', '05-2025'),
+	(41, 'BR001', 1, '1', '2500', '10 May 2025, 21:21', '05-2025'),
+	(42, 'BR002', 1, '1', '2500', '10 May 2025, 21:22', '05-2025');
 
---
--- Table structure for table `nota`
---
+-- Dumping data for table db_toko.penjualan: ~2 rows (approximately)
+INSERT INTO `penjualan` (`id_penjualan`, `id_barang`, `id_member`, `jumlah`, `total`, `tanggal_input`) VALUES
+	(30, 'BR001', 1, '1', '2500', '10 May 2025, 21:21'),
+	(31, 'BR002', 1, '1', '2500', '10 May 2025, 21:22');
 
-CREATE TABLE `nota` (
-  `id_nota` int(11) NOT NULL,
-  `id_barang` varchar(255) NOT NULL,
-  `id_member` int(11) NOT NULL,
-  `jumlah` varchar(255) NOT NULL,
-  `total` varchar(255) NOT NULL,
-  `tanggal_input` varchar(255) NOT NULL,
-  `periode` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penjualan`
---
-
-CREATE TABLE `penjualan` (
-  `id_penjualan` int(11) NOT NULL,
-  `id_barang` varchar(255) NOT NULL,
-  `id_member` int(11) NOT NULL,
-  `jumlah` varchar(255) NOT NULL,
-  `total` varchar(255) NOT NULL,
-  `tanggal_input` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `toko`
---
-
-CREATE TABLE `toko` (
-  `id_toko` int(11) NOT NULL,
-  `nama_toko` varchar(255) NOT NULL,
-  `alamat_toko` text NOT NULL,
-  `tlp` varchar(255) NOT NULL,
-  `nama_pemilik` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `toko`
---
-
+-- Dumping data for table db_toko.toko: ~0 rows (approximately)
 INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`) VALUES
-(1, 'SMA Muhammadiyah 10', 'Surabaya', '(031) 5352707', 'Admin');
+	(1, 'SMA MUHAMMADIYAH 10', 'SURABAYA', '081234567890', 'Salim Bahrisy');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `kategori`
---
-ALTER TABLE `kategori`
-  ADD PRIMARY KEY (`id_kategori`);
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id_login`);
-
---
--- Indexes for table `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`id_member`);
-
---
--- Indexes for table `nota`
---
-ALTER TABLE `nota`
-  ADD PRIMARY KEY (`id_nota`);
-
---
--- Indexes for table `penjualan`
---
-ALTER TABLE `penjualan`
-  ADD PRIMARY KEY (`id_penjualan`);
-
---
--- Indexes for table `toko`
---
-ALTER TABLE `toko`
-  ADD PRIMARY KEY (`id_toko`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `barang`
---
-ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `kategori`
---
-ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `member`
---
-ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `nota`
---
-ALTER TABLE `nota`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `penjualan`
---
-ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `toko`
---
-ALTER TABLE `toko`
-  MODIFY `id_toko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
