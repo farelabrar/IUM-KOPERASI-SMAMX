@@ -116,7 +116,8 @@
                         <div class="form-group">
                             <label for="username" class="font-weight-bold">Username</label>
                             <input type="text" class="form-control" id="username" name="user" 
-                                   value="<?php echo htmlspecialchars($hasil['user']); ?>" readonly>
+                                   value="<?php echo htmlspecialchars($hasil['user']); ?>" required>
+                            <small class="form-text text-muted">Username harus unik dan tidak boleh sama dengan pengguna lain</small>
                         </div>
                         
                         <div class="form-group">

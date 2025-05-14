@@ -159,6 +159,17 @@ if (!empty($_SESSION['admin'])) {
         $user = htmlentities($_POST['user']);
         $pass = htmlentities($_POST['pass']);
 
+        // Cek apakah username sudah digunakan
+        $sql_check = 'SELECT * FROM login WHERE user = ? AND id_member != ?';
+        $check = $config->prepare($sql_check);
+        $check->execute(array($user, $id));
+        
+        if($check->rowCount() > 0) {
+            echo '<script>alert("Username sudah digunakan!");window.location="../../index.php?page=user"</script>';
+            exit;
+        }
+
+        // Jika username unik, lakukan update
         $data[] = $user;
         $data[] = $pass;
         $data[] = $id;
